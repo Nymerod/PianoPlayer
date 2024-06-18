@@ -54,7 +54,7 @@ canvas.addEventListener('click', (event) => {
         if (isInsideRect(x, y, b)) {
 
             console.log("Black key clicked" , keys.black.indexOf(b))
-            let audio = new Audio(notes_black[keys.black.indexOf(b)]);
+            let audio = new Audio("./assets/" + notes_black[keys.black.indexOf(b)]);
             audio.play();
             keyClicked = true;
             break;
@@ -65,8 +65,7 @@ canvas.addEventListener('click', (event) => {
     if (! keyClicked){
         for (const w of keys.white) {
             if (isInsideRect(x, y, w)) {
-                console.log("White key clicked" , keys.white.indexOf(w))
-                let audio = new Audio(notes_white[keys.white.indexOf(w)])
+                let audio = new Audio("./assets/" + notes_white[keys.white.indexOf(w)])
                 audio.play();
                 break;
             }
@@ -78,7 +77,7 @@ canvas.addEventListener('click', (event) => {
                 if (event.key === (hotkeys_white[i])) {
                     let audio = new Audio(notes_white[i]);
                     audio.play();
-                    
+
 
                 }
 
